@@ -1,4 +1,4 @@
-#dá resposta errada, depois refaço
+#tbm dá resposta errada não sei pq jesus amado
 x = input("").split()
 diai = int(x[1])
 
@@ -15,28 +15,36 @@ horaf = int(y[0])
 minutof = int(y[1])
 segundof = int(y[2])
 
-dias, horas, minutos, segundos = 0, 0, 0, 0
+dias = diaf - diai - 1
 
-if(horai == horaf and minutoi == minutof and segundoi == segundof):
-    dias = diaf - diai
+if(horaf < horai):
+    horas = 24 - (horai - horaf)
 else:
-    dias = diaf - diai - 1
-    if(segundof >= segundoi):
-        segundos = segundof - segundoi
-    else:
-        segundos = 60 - (segundoi - segundof)
+    horas = abs(horaf - horai)
 
-    if(minutof >= minutoi):
-        minutos = minutof - minutoi
-    else:
-        minutos = 60 -(minutoi - minutof)
+if(minutoi > minutof):
+    minutos = abs(60 - (minutoi - minutof))
+    horas -= 1
+else:
+    minutos = minutof - minutoi
 
-    if(horaf >= horai):
-        horas = horaf - horai
-    else:
-        horas = 24 -(horai - horaf)
+if(segundoi > segundof):
+    segundos = abs(60 - (segundoi - segundof))
+    minutos -= 1
+else:
+    segundos = segundof - segundoi
 
 print(dias, "dia(s)")
 print(horas, "hora(s)")
 print(minutos, "minuto(s)")
 print(segundos, "segundo(s)")
+
+
+
+
+
+
+
+
+    
+
